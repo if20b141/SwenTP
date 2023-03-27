@@ -5,8 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test_WPF_Application"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Click="Button_Click">New Button</Button>
-    </Grid>
+        Title="MainWindow" Height="475" Width="800">
+	<Grid>
+		<Grid.Resources>
+			<SolidColorBrush x:Key="brush" Color="Silver"/>
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition  Height="25*"/>
+			<RowDefinition  Height="25*"/>
+			<RowDefinition  Height="25*"/>
+			<RowDefinition  Height="200*"/>
+			<RowDefinition  Height="200*"/>
+		</Grid.RowDefinitions>
+		
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			
+		</Grid.ColumnDefinitions>
+		
+		<Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Click="File" ClickMode="Press">File</Button>
+		<Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">Edit</Button>
+		<Button Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2">Options</Button>
+		<Button Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2"></Button>
+		<Button Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="2"></Button>
+		<Button Grid.Row="0" Grid.Column="10" Grid.ColumnSpan="2">Help</Button>
+
+		<Button Grid.Row="2" Grid.Column="4">General</Button>
+		<Button Grid.Row="2" Grid.Column="5">Route</Button>
+		<Button Grid.Row="2" Grid.Column="6">Misc</Button>
+
+
+		<Border Grid.Row="0" Grid.ColumnSpan="12" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+			
+		</Border>
+		<Border Grid.Row="1" Grid.ColumnSpan="12" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+		</Border>
+		<Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+		</Border>
+		<Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+		</Border>
+		<Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+			<TextBlock>3</TextBlock>
+		</Border>
+		<Border Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="8" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+			<TextBlock>4</TextBlock>
+		</Border>
+		<Border Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="8" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+			<TextBlock>4</TextBlock>
+		</Border>
+	</Grid>
 </Window>

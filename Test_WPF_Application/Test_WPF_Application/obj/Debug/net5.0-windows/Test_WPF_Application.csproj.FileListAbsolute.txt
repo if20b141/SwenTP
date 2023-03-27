@@ -20,3 +20,25 @@ C:\Users\Ferschl\Desktop\SWEN_2023\Test_WPF_Application\Test_WPF_Application\obj
 C:\Users\Ferschl\Desktop\SWEN_2023\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\ref\Test_WPF_Application.dll
 C:\Users\Ferschl\Desktop\SWEN_2023\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.pdb
 C:\Users\Ferschl\Desktop\SWEN_2023\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.genruntimeconfig.cache
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\bin\Debug\net5.0-windows\Test_WPF_Application.exe
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\bin\Debug\net5.0-windows\Test_WPF_Application.deps.json
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\bin\Debug\net5.0-windows\Test_WPF_Application.runtimeconfig.json
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\bin\Debug\net5.0-windows\Test_WPF_Application.runtimeconfig.dev.json
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\bin\Debug\net5.0-windows\Test_WPF_Application.dll
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\bin\Debug\net5.0-windows\Test_WPF_Application.pdb
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.csproj.AssemblyReference.cache
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\MainWindow.g.cs
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\App.g.cs
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application_MarkupCompile.cache
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application_MarkupCompile.lref
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\MainWindow.baml
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.g.resources
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.AssemblyInfoInputs.cache
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.AssemblyInfo.cs
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.csproj.CoreCompileInputs.cache
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.dll
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\refint\Test_WPF_Application.dll
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.pdb
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\Test_WPF_Application.genruntimeconfig.cache
+D:\FH Technikum Informatik\4. Semester\Swen\Test_WPF_Application\Test_WPF_Application\obj\Debug\net5.0-windows\ref\Test_WPF_Application.dll

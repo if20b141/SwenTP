@@ -25,7 +25,7 @@ namespace Test_WPF_Application
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void File(object sender, RoutedEventArgs e)
         {
 
         }
