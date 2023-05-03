@@ -1,0 +1,22 @@
+﻿<Application x:Class="UIL.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UIL"
+             xmlns:views="clr-namespace:UIL.Views"
+             xmlns:viewmodels="clr-namespace:UIL.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:HelpViewModel}">
+            <views:HelpView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:OptionsViewModel}">
+            <views:OptionsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:FileViewModel}">
+            <views:FileView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EditViewModel}">
+            <views:EditView/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

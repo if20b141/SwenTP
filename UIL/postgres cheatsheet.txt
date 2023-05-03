@@ -1,0 +1,2 @@
+docker exec -it entityframework-main-postgres-1 bash
+psql -U postgres

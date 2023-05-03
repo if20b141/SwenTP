@@ -1,0 +1,23 @@
+﻿<Window x:Class="UIL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+
+        <ContentControl Content="{Binding SelectedViewModel}"/>
+
+        <StackPanel Orientation="Horizontal" Height="25" VerticalAlignment="Top">
+            <Button Width="200" Content="File" Command="{Binding UpdateViewCommand}" CommandParameter="File"/>
+            <Button Width="200" Content="Edit" Command="{Binding UpdateViewCommand}" CommandParameter="Edit"/>
+            <Button Width="200" Content="Help" Command="{Binding UpdateViewCommand}" CommandParameter="Help"/>
+            <Button Width="200" Content="Options" Command="{Binding UpdateViewCommand}" CommandParameter="Options"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
