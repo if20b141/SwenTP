@@ -1,2 +1,3 @@
 docker exec -it entityframework-main-postgres-1 bash
 psql -U postgres
+CREATE TABLE IF NOT EXISTS Tours(id SERIAL PRIMARY KEY, tourname VARCHAR(50) , description VARCHAR(255) NOT NULL, startpoint VARCHAR(50) NOT NULL, endpoint VARCHAR(50) NOT NULL, type VARCHAR(50) NOT NULL, distance VARCHAR(50) NOT NULL, time VARCHAR(50) NOT NULL, information VARCHAR(100) NOT NULL);

@@ -53,7 +53,7 @@ namespace BL {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BL;component/usercontrol1.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BL;V1.0.0.0;component/usercontrol1.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UserControl1.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

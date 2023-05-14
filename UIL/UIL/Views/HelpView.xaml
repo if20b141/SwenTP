@@ -11,6 +11,7 @@
 
 
         <TextBlock Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center">Hüüüüüfe</TextBlock>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding TestString}"></TextBlock>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Test" Command="{Binding MapQuestCommand}"></Button>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="{Binding Text}"></TextBlock>
     </Grid>
 </UserControl>

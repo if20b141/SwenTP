@@ -12,10 +12,11 @@
         <ContentControl Content="{Binding SelectedViewModel}"/>
 
         <StackPanel Orientation="Horizontal" Height="25" VerticalAlignment="Top">
-            <Button Width="200" Content="File" Command="{Binding UpdateViewCommand}" CommandParameter="File"/>
-            <Button Width="200" Content="Edit" Command="{Binding UpdateViewCommand}" CommandParameter="Edit"/>
-            <Button Width="200" Content="Help" Command="{Binding UpdateViewCommand}" CommandParameter="Help"/>
-            <Button Width="200" Content="Options" Command="{Binding UpdateViewCommand}" CommandParameter="Options"/>
+            <Button MinWidth="160" Content="File" Command="{Binding UpdateViewCommand}" CommandParameter="File"/>
+            <Button MinWidth="160" Content="Edit" Command="{Binding UpdateViewCommand}" CommandParameter="Edit"/>
+            <Button MinWidth="160" Content="Help" Command="{Binding UpdateViewCommand}" CommandParameter="Help"/>
+            <Button MinWidth="160" Content="View Tours" Command="{Binding UpdateViewCommand}" CommandParameter="ViewTours"/>
+            <Button MinWidth="160" Content="Tours" Command="{Binding UpdateViewCommand}" CommandParameter="Tours"/>
         </StackPanel>
 
 

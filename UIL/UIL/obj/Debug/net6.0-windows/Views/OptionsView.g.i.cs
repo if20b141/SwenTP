@@ -53,7 +53,7 @@ namespace UIL.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/UIL;component/views/optionsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/UIL;V1.0.0.0;component/views/optionsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\OptionsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

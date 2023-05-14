@@ -4,11 +4,6 @@ D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\bin\Debug\net6.0-windows\BL.p
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\bin\Debug\net6.0-windows\DAL.dll
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\bin\Debug\net6.0-windows\DAL.pdb
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL.csproj.AssemblyReference.cache
-D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\UserControl1.g.cs
-D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL_MarkupCompile.cache
-D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL_MarkupCompile.lref
-D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\UserControl1.baml
-D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL.g.resources
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL.GeneratedMSBuildEditorConfig.editorconfig
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL.AssemblyInfoInputs.cache
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL.AssemblyInfo.cs
@@ -18,5 +13,3 @@ D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL.d
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\refint\BL.dll
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\BL.pdb
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\obj\Debug\net6.0-windows\ref\BL.dll
-D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\bin\Debug\net6.0-windows\DAL.dll.config
-D:\FH Technikum Informatik\4. Semester\Swen\UIL\BL\bin\Debug\net6.0-windows\ConfigFiles\App.config

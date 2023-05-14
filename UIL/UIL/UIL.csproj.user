@@ -16,7 +16,10 @@
     <Compile Update="Views\HelpView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\OptionsView.xaml.cs">
+    <Compile Update="Views\ViewToursView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TourView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,7 +36,10 @@
     <Page Update="Views\HelpView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\OptionsView.xaml">
+    <Page Update="Views\ViewToursView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TourView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

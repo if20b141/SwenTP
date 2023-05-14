@@ -11,11 +11,11 @@ namespace BL
     {
 
 
-        public static async Task<string> MapRequest()
+        public static async Task<string> MapRequest(string _From, string _To, string _Type)
         {
             string APIKey = "kOaSvJyHVCfDUCek157MirgXXDZLRs0R";
             string HTTPCommand;
-            HTTPCommand = "https://www.mapquestapi.com/directions/v2/route?key=" + APIKey + "&from=Clarendon Blvd,Arlington,VA&to=2400+S+Glebe+Rd,+Arlington,+VA";
+            HTTPCommand = "https://www.mapquestapi.com/directions/v2/route?key=" + APIKey + "&from=" + _From +"&to=" + _To + "&routeType=" + _Type + "&unit=k";
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage response = await httpClient.GetAsync(HTTPCommand);
 

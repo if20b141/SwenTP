@@ -3,33 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using BL;
 using DAL;
+using UIL.Commands;
 
 namespace UIL.ViewModels
 {
     public class HelpViewModel : BaseViewModel
     {
-        DataHandler handler = new DataHandler();
-        public string TestString { get; set; }
+        //DataHandler handler = new DataHandler();
+
+        public event EventHandler<string?>? TextChanged;
+        public ICommand MapQuestCommand { get; }
+        private string? text;
+        public string? Text
+        {
+            get => text;
+            set
+            {
+                text = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         public HelpViewModel()
         {
-            /*handler.SetTestFunction();
-            List<string> list = new List<string>();
-            list = handler.GetTestFunction();
-            TestString = list[0];
-            */
-            /* List<string> list = new List<string>();
-             list = handler.GetConnectionString(1);
-             string test = "";
-             for(int i = 0; i < list.Count; i++)
-             {
-                 test = test + $"{list[i]} " ;
-             }
-            */
-            MapServer server = new BL.MapServer();
-            string test = MapServer.MapRequest().Result;
-            TestString = test;
+            MapQuestCommand = new CommandHandler((_) =>
+            {
+                MapQuestTest();
+                TextChanged?.Invoke(this, Text);
+            });
         }
+        public async void MapQuestTest()
+        {
+            MapServer server = new BL.MapServer();
+        }
+
     }
 }

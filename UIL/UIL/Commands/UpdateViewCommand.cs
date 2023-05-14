@@ -30,9 +30,9 @@ namespace UIL.Commands
             {
                 viewModel.SelectedViewModel = new HelpViewModel();
             }
-            else if (parameter.ToString() == "Options")
+            else if (parameter.ToString() == "ViewTours")
             {
-                viewModel.SelectedViewModel = new OptionsViewModel();
+                viewModel.SelectedViewModel = new ViewToursModel();
             }
             else if(parameter.ToString() == "File")
             {
@@ -41,6 +41,10 @@ namespace UIL.Commands
             else if(parameter.ToString() == "Edit")
             {
                 viewModel.SelectedViewModel = new EditViewModel();
+            }
+            else if(parameter.ToString() == "Tours")
+            {
+                viewModel.SelectedViewModel = new TourModel();
             }
         }
     }

@@ -5,18 +5,22 @@
              xmlns:views="clr-namespace:UIL.Views"
              xmlns:viewmodels="clr-namespace:UIL.ViewModels"
              StartupUri="MainWindow.xaml">
+            
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewmodels:HelpViewModel}">
             <views:HelpView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:OptionsViewModel}">
-            <views:OptionsView/>
+        <DataTemplate DataType="{x:Type viewmodels:ViewToursModel}">
+            <views:ViewToursView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:FileViewModel}">
             <views:FileView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:EditViewModel}">
             <views:EditView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TourModel}">
+            <views:TourView/>
         </DataTemplate>
     </Application.Resources>
 </Application>
