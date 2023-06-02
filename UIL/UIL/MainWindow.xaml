@@ -4,20 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UIL"
+        xmlns:views ="clr-namespace:UIL.Views"
+        xmlns:viewmodels="clr-namespace:UIL.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
+    </Window.Resources>
     <Grid>
 
 
-        <ContentControl Content="{Binding SelectedViewModel}"/>
+        <views:SearchView x:Name="SearchBar"/>
+        <views:ResultView x:Name="ResultView"/>
+        
 
-        <StackPanel Orientation="Horizontal" Height="25" VerticalAlignment="Top">
-            <Button MinWidth="160" Content="File" Command="{Binding UpdateViewCommand}" CommandParameter="File"/>
-            <Button MinWidth="160" Content="Edit" Command="{Binding UpdateViewCommand}" CommandParameter="Edit"/>
-            <Button MinWidth="160" Content="Help" Command="{Binding UpdateViewCommand}" CommandParameter="Help"/>
-            <Button MinWidth="160" Content="View Tours" Command="{Binding UpdateViewCommand}" CommandParameter="ViewTours"/>
-            <Button MinWidth="160" Content="Tours" Command="{Binding UpdateViewCommand}" CommandParameter="Tours"/>
-        </StackPanel>
 
 
     </Grid>

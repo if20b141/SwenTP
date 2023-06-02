@@ -28,7 +28,10 @@ namespace UIL
         {
             InitializeComponent();
 
-            DataContext = new MainViewModel();
+            //ResultViewModel viewModel = new ResultViewModel();
+            //SearchViewModel searchViewModel = new SearchViewModel();
+
+            //DataContext = new MainViewModel(/*searchViewModel, viewModel*/);
         }
 
     }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\FH Technikum Informatik\4. Semester\Swen\UIL\UIL\App.xaml
-6-1183242124
+3-1356705945
 11413424753
-19-232667024
-237662159790
-MainWindow.xaml;Views\EditView.xaml;Views\FileView.xaml;Views\HelpView.xaml;Views\TourView.xaml;Views\ViewToursView.xaml;
+15-383989478
+241386029530
+MainWindow.xaml;Views\ResultView.xaml;Views\SearchView.xaml;
 
-True
+False
 

@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="UIL.Views.ResultView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIL.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="0,25,0,0" Width="100" Height="25" Command="{Binding CreateTour}" Content="Create"/>
+        <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="100,25,0,0" Width="100" Height="25" Command="{Binding EditTour}" Content="Edit"/>
+        <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="200,25,0,0" Width="100" Height="25" Command="{Binding DeleteTour}" Content="Delete"/>
+        <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="300,25,0,0" Width="100" Height="25" Command="{Binding SaveToFile}" Content="SaveToFile"/>
+        <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="400,25,0,0" Width="100" Height="25" Command="{Binding ReadFromFile}" Content="ReadFromFile"/>
+        <TextBox HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="500,25,0,0" Width="200" Height="25" Text="{Binding FileName}"/>
+        <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="600,25,0,0" Width="100" Height="25" Command="{Binding CompleteReport}" Content="CompleteReport"/>
+        <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="700,25,0,0" Width="100" Height="25" Command="{Binding TourReport}" Content="TourReport"/>
+
+        <ListView Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" ItemsSource="{Binding Items}" SelectedValue="{Binding SelectedItem}" Margin="0,50,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding id}"/>
+                        <TextBox Text="{Binding tourname}"/>
+                        <TextBox Text="{Binding description}"/>
+                        <TextBox Text="{Binding startpoint}"/>
+                        <TextBox Text="{Binding endpoint}"/>
+                        <TextBlock Text="{Binding type}"/>
+                        <TextBlock Text="{Binding time}"/>
+                        <TextBlock Text="{Binding distance}"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Image Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding MapImage}" Width="200" Height="200"/>
+
+
+        <Button Content="Create" Command="{Binding CreateTourLog}" Grid.Column="2" Grid.Row="1" Height="25" Width="50" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Edit" Command="{Binding EditTourLog}" Grid.Column="2" Grid.Row="1" Height="25" Width="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0"/>
+        <Button Content="Delete" Command="{Binding DeleteTourLog}" Grid.Column="2" Grid.Row="1" Height="25" Width="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="100,0,0,0"/>
+
+        <ListView Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" ItemsSource="{Binding TourLogItems}" SelectedValue="{Binding SelectedLog}" Margin="0,25,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding id}"/>
+                        <TextBlock Text="{Binding tourid}"/>
+                        <TextBox Text="{Binding time}"/>
+                        <TextBox Text="{Binding distance}"/>
+                        <TextBox Text="{Binding rating}"/>
+                        <TextBox Text="{Binding comment}"/>
+
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Tourname:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Description:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Starpoint:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Endpoint:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="300,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Type of Transportation:"/>
+
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Name}"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Description}"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,25,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _From}"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,25,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _To}"></TextBox>
+
+        <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="300,25,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Type}">
+            <ComboBoxItem IsSelected="True">fastest</ComboBoxItem>
+            <ComboBoxItem>shortest</ComboBoxItem>
+            <ComboBoxItem>pedestrian</ComboBoxItem>
+            <ComboBoxItem>bicycle</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Time:"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Distance:"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Rating(0-9):"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Comment:"/>
+        
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding time}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding distance}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding rating}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding comment}"></TextBox>
+
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,1 @@
+{"id":2,"tourname":"spazieren","description":"les go","startpoint":"Bruck/LEitha","endpoint":"Wilfleinsdorf","type":"pedestrian","distance":"5.2","time":"01:28:01","information":"spazieren202362145355742.png","logs":[{"id":16,"tourid":2,"time":"1,30","distance":"5,3","rating":"9","comment":"nice"},{"id":17,"tourid":2,"time":"1,50","distance":"5,6","rating":"8","comment":"ok"}]}

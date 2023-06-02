@@ -7,19 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\EditView.xaml.cs">
+    <Compile Update="Views\ResultView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\FileView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\HelpView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\ViewToursView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\TourView.xaml.cs">
+    <Compile Update="Views\SearchView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -27,19 +18,10 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\EditView.xaml">
+    <Page Update="Views\ResultView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\FileView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\HelpView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\ViewToursView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\TourView.xaml">
+    <Page Update="Views\SearchView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

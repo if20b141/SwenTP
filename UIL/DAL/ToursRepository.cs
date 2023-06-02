@@ -45,6 +45,14 @@ namespace DAL
         {
             return context.tours.Where(t => t.tourname != null).ToList();
         }
+        public ICollection<tours> SearchForTours(string searchtext)
+        {
+            return context.tours.Where(t => t.tourname.Contains(searchtext) || t.description.Contains(searchtext) || t.startpoint.Contains(searchtext) || t.endpoint.Contains(searchtext) || t.type.Contains(searchtext) || t.distance.Contains(searchtext) || t.time.Contains(searchtext)).ToList();
+        }
+        public ICollection<tours> SelectTour(string tourname)
+        {
+            return context.tours.Where(t => t.tourname == tourname).ToList<tours>();
+        }
 
         public void Remove(int id)
         {

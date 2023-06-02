@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DAL
 {
@@ -17,5 +18,8 @@ namespace DAL
         public string distance { get; set; }
         public string time { get; set; }
         public string information { get; set; }
+        public List<tourlogs> logs { get; set; }
+
+
     }
 }
