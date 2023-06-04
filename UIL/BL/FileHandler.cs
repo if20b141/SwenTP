@@ -137,7 +137,7 @@ namespace BL
 
             List<tourlogs> logs = new List<tourlogs>();
             logs = logHandler.Search(tour.id);
-            logs.RemoveAt(0);
+            
             foreach (tourlogs log in logs)
             {
                 towrite = "Tourlognumber: " + log.id;
@@ -206,7 +206,7 @@ namespace BL
 
                 List<tourlogs> logs = new List<tourlogs>();
                 logs = logHandler.Search(tour.id);
-                logs.RemoveAt(0);
+                
                 foreach(tourlogs log in logs)
                 {
                     towrite = "Tourlognumber: " + log.id;
