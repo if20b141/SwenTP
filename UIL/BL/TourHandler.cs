@@ -145,16 +145,10 @@ namespace BL
 
             ToursContext context = new ToursContext(configuration.configuration);
             ToursSQLRepository repository = new ToursSQLRepository(context);
-            if (repository.SelectTour(Tourname) == null)
-            {
+            
                 repository.Add(tour);
                 return tour;
-            }
-            else
-            {
-                tours emptytour = new tours();
-                return emptytour;
-            }
+           
 
         }
         public async void EditMapQuest()
