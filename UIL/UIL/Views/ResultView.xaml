@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
 
         <Button HorizontalAlignment="Left" Grid.ColumnSpan="4" VerticalAlignment="Top" Margin="0,25,0,0" Width="100" Height="25" Command="{Binding CreateTour}" Content="Create"/>
@@ -69,33 +69,37 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Tourname:"/>
-        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Description:"/>
-        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Starpoint:"/>
-        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Endpoint:"/>
-        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="300,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Type of Transportation:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Tourname:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Description:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Starpoint:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Endpoint:"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="300,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Type of Transportation:"/>
 
-        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Name}"></TextBox>
-        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Description}"></TextBox>
-        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,25,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _From}"></TextBox>
-        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,25,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _To}"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Create Tour"/>
 
-        <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="300,25,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Type}">
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,50,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Name}"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,50,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Description}"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,50,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _From}"></TextBox>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,50,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _To}"></TextBox>
+
+        <ComboBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="300,50,0,0" MinWidth="75" Height="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding _Type}">
             <ComboBoxItem IsSelected="True">fastest</ComboBoxItem>
             <ComboBoxItem>shortest</ComboBoxItem>
             <ComboBoxItem>pedestrian</ComboBoxItem>
             <ComboBoxItem>bicycle</ComboBoxItem>
         </ComboBox>
 
-        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Time:"/>
-        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Distance:"/>
-        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Rating(0-9):"/>
-        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Comment:"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Create TourLog"/>
+
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Time:"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Distance:"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Rating(0-9):"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,25,0,0" MinWidth="75" Height="25" HorizontalAlignment="Left" Text="Comment:"/>
         
-        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding time}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding distance}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding rating}"></TextBox>
-        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,25,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding comment}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,50,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding time}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="75,50,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding distance}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="150,50,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding rating}"></TextBox>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="225,50,0,0" MinWidth="75" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="{Binding comment}"></TextBox>
 
 
 

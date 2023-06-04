@@ -1,32 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using PdfSharp.Pdf.Content.Objects;
 
 namespace DAL
 {
-    public class ToursNOSQLRepository : IToursRepository
-    {
-        public ICollection<tours> GetAllTours()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Remove(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-        public tours Add(tours tour)
-        {
-            throw new System.NotImplementedException();
-        }
-        public tours Update(tours tour)
-        {
-            throw new System.NotImplementedException();
-        }
 
-    }
+
     public class ToursSQLRepository : IToursRepository
     {
         private readonly ToursContext context;
@@ -53,6 +38,10 @@ namespace DAL
         {
             return context.tours.Where(t => t.tourname == tourname).ToList<tours>();
         }
+        public ICollection<tours> GetSpecificTourByID(int id)
+        {
+            return context.tours.Where(t => t.id == id).ToList<tours>();
+        } 
 
         public void Remove(int id)
         {
@@ -83,5 +72,8 @@ namespace DAL
         tours Add(tours tour);
         tours Update(tours tour);
         void Remove(int id);
+        ICollection<tours> GetSpecificTourByID(int id);
+        ICollection<tours> GetAllTours();
+        ICollection<tours> SelectTour(string tourname);
     }
 }

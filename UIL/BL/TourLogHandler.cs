@@ -1,4 +1,6 @@
 ﻿using DAL;
+using log4net.Core;
+using log4net.Repository.Hierarchy;
 using NetTopologySuite.Operation.Distance;
 using System;
 using System.Collections.Generic;
@@ -11,8 +13,10 @@ using System.Windows.Media;
 
 namespace BL
 {
-    public class TourLogHandler
+    public class TourLogHandler : ITourLogHandler
     {
+        
+
         public List<tourlogs> Search(int tourid)
         {
             DALConfiguration configuration = new DALConfiguration();
@@ -58,15 +62,23 @@ namespace BL
             return list;
         }
         
-        public void DeleteTourLogForDB(int id)
+        public int DeleteTourLogForDB(int id)
         {
             DALConfiguration configuration = new DALConfiguration();
 
             TourLogContext context = new TourLogContext(configuration.configuration);
             TourLogSQLRepository repository = new TourLogSQLRepository(context);
-            repository.Remove(id);
+            if (repository.SearchForTourlogByID(id) != 0)
+            {
+                repository.Remove(id);
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
-        public void EditTourLogForDB(int id, int tourid, string time, string distance, string rating, string comment)
+        public int EditTourLogForDB(int id, int tourid, string time, string distance, string rating, string comment)
         {
             float timecheck;
             bool timecheckfloat = float.TryParse(time, out timecheck);
@@ -89,6 +101,11 @@ namespace BL
                 TourLogContext context = new TourLogContext(configuration.configuration);
                 TourLogSQLRepository repository = new TourLogSQLRepository(context);
                 repository.Update(log);
+                return 1;
+            }
+            else
+            {
+                return 0;
             }
         }
         
@@ -107,7 +124,7 @@ namespace BL
             }
             return tourlogs;
         }
-        public void CreateTourLogForDB(int _tourid, string _time, string _distance, string _rating, string _comment)
+        public int CreateTourLogForDB(int _tourid, string _time, string _distance, string _rating, string _comment)
         {
             DALConfiguration configuration = new DALConfiguration();
             TourLogContext tourLogContext = new TourLogContext(configuration.configuration);
@@ -123,11 +140,21 @@ namespace BL
                 tourlog.rating = _rating;
                 tourlog.comment = _comment;
                 tourLogSQLRepository.Add(tourlog);
+                return 1;
             }
             else
             {
+                return 0;
                 throw new Exception("rating no integer or integer too big or small");
             }
         }
+    }
+    public interface ITourLogHandler
+    {
+        List<tourlogs> Search(int tourid);
+        List<tourlogs> SearchForLogs(string searchtext);
+        int DeleteTourLogForDB(int id);
+        int EditTourLogForDB(int id, int tourid, string time, string distance, string rating, string comment);
+        int CreateTourLogForDB(int _tourid, string _time, string _distance, string _rating, string _comment);
     }
 }

@@ -9,15 +9,21 @@ using UIL.Commands;
 using DAL;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using log4net.Core;
+using log4net.Repository.Hierarchy;
+using UIL.Logging;
 
 namespace UIL.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
+        
+        
         public ResultViewModel _ResultViewModel { get; }
         public SearchViewModel _SearchViewModel { get; }
         public event EventHandler<string?>? SearchTextChanged;
         public event EventHandler<tours?>? SelectedItemChanged;
+        private static LoggerWrapper logger = ILoggerWrapperFactory.GetLogger();
 
         public ICommand SearchCommand { get; }
 
@@ -72,6 +78,9 @@ namespace UIL.ViewModels
 
         public MainViewModel(SearchViewModel searchViewModel, ResultViewModel resultViewModel)
         {
+            //logger.Warning("hüfe");
+            
+            
              _ResultViewModel = resultViewModel;
              _SearchViewModel = searchViewModel;
 
@@ -79,7 +88,16 @@ namespace UIL.ViewModels
 
             searchViewModel.SearchTextChanged += (_, searchText) =>
             {
-                Search(searchText);
+                logger.Info("Search Started");
+                if (searchText != null)
+                {
+                    Search(searchText);
+                }
+                else
+                {
+                    logger.Warning("Tried to search in DB without writing searchtext");
+                }
+                
                 
             };
             resultViewModel.SelectedItemChanged += (_, selectedItem) =>

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using UIL.Commands;
+using UIL.Logging;
 
 namespace UIL.ViewModels
 {
@@ -17,6 +18,7 @@ namespace UIL.ViewModels
     {
         public event EventHandler<tours?>? SelectedItemChanged;
         public event EventHandler<tourlogs?>? SelectedLogChanged;
+        private static LoggerWrapper logger = ILoggerWrapperFactory.GetLogger();
 
         public ObservableCollection<tours> Items { get; } = new ObservableCollection<tours>();
         public ObservableCollection<tourlogs> TourLogItems { get; } = new ObservableCollection<tourlogs>();
@@ -193,7 +195,23 @@ namespace UIL.ViewModels
                 if (SelectedItem != null)
                 {
                     
-                    tour.EditTourForDB(SelectedItem.id, SelectedItem.tourname, SelectedItem.description, SelectedItem.startpoint, SelectedItem.endpoint, SelectedItem.type);
+                    string response = tour.EditTourForDB(SelectedItem.id, SelectedItem.tourname, SelectedItem.description, SelectedItem.startpoint, SelectedItem.endpoint, SelectedItem.type);
+                    if(response == "ok")
+                    {
+                        logger.Info("Tour correctly edited");
+                    }
+                    else if(response == "noresult")
+                    {
+                        logger.Warning("No tour to edit found");
+                    }
+                    else if(response == "error")
+                    {
+                        logger.Fatal("Something went really wrong");
+                    }
+                }
+                else
+                {
+                    logger.Fatal("Tried to edit tour without selecting tour");
                 }
 
 
@@ -204,15 +222,33 @@ namespace UIL.ViewModels
                 {
                     tour.DeleteTourForDB(SelectedItem.id);
                 }
+                else
+                {
+                    logger.Fatal("Tried to delete tour without selecting tour");
+                }
 
             });
             DeleteTourLog = new CommandHandler((_) =>
             {
-                tourLog.DeleteTourLogForDB(SelectedLog.id);
+                if (SelectedLog != null)
+                {
+                    tourLog.DeleteTourLogForDB(SelectedLog.id);
+                }
+                else
+                {
+                    logger.Fatal("Tried to delete tourlog without selecting tourlog");
+                }
             });
             EditTourLog = new CommandHandler((_) =>
             {
-                tourLog.EditTourLogForDB(SelectedLog.id, SelectedLog.tourid, SelectedLog.time, SelectedLog.distance, SelectedLog.rating, SelectedLog.comment);
+                if (SelectedLog != null)
+                {
+                    tourLog.EditTourLogForDB(SelectedLog.id, SelectedLog.tourid, SelectedLog.time, SelectedLog.distance, SelectedLog.rating, SelectedLog.comment);
+                }
+                else
+                {
+                    logger.Fatal("Tried to edit tourlog without selecting tourlog");
+                }
             });
             CreateTourLog = new CommandHandler((_) =>
             {
@@ -221,7 +257,14 @@ namespace UIL.ViewModels
                     TextChanged?.Invoke(this, distance);
                     TextChanged?.Invoke(this, rating);
                     TextChanged?.Invoke(this, comment);
+                if (SelectedItem.id != null && time != null && distance != null && rating != null && comment != null)
+                {
                     tourLog.CreateTourLogForDB(SelectedItem.id, time, distance, rating, comment);
+                }
+                else
+                {
+                    logger.Fatal("Tried to create tourlog without filling out the complete form");
+                }
                 
             });
             CreateTour = new CommandHandler((_) =>
@@ -231,19 +274,40 @@ namespace UIL.ViewModels
                 TextChanged?.Invoke(this, _From);
                 TextChanged?.Invoke(this, _To);
                 TextChanged?.Invoke(this, _Type);
-
-                tour.CreateTourForDB(_Name, _Description, _From, _To, _Type);
+                if (_Name != null && _Description != null && _From != null && _To != null && _Type != null)
+                {
+                    tour.CreateTourForDB(_Name, _Description, _From, _To, _Type);
+                }
+                else
+                {
+                    logger.Fatal("Tried to create tour without filling out the complete form");
+                }
             });
             SaveToFile = new CommandHandler((_) =>
             {
-                FileHandler handler = new FileHandler();
-                handler.SaveToFile(SelectedItem);
+                if (SelectedItem != null)
+                {
+                    FileHandler handler = new FileHandler();
+                    handler.SaveToFile(SelectedItem);
+                }
+                else
+                {
+                    logger.Warning("Tried to save a tour to file without selecting a tour");
+                }
             });
             ReadFromFile = new CommandHandler((_) =>
             {
                 TextChanged?.Invoke(this, FileName);
-                FileHandler handler = new FileHandler();
-                handler.ReadFromFile(FileName);
+                if (FileName != null)
+                {
+                    
+                    FileHandler handler = new FileHandler();
+                    handler.ReadFromFile(FileName);
+                }
+                else
+                {
+                    logger.Warning("Tried to read a tour from file without writing a filename");
+                }
                 
             });
             CompleteReport = new CommandHandler((_) =>
@@ -257,6 +321,10 @@ namespace UIL.ViewModels
                     FileHandler handler = new FileHandler();
                     handler.TourReport(SelectedItem);
                     }
+                else
+                {
+                    logger.Warning("Tried to create a single tourreport without selecting a tour");
+                }
             });
             
     }

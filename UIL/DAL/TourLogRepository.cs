@@ -44,6 +44,11 @@ namespace DAL
         {
             return context.tourlogs.Where(t => t.time != null).ToList();
         }
+        public int SearchForTourlogByID(int id)
+        {
+            var check = context.tourlogs.Where(t => t.id == id);
+            return check.Count();
+        }
         public ICollection<tourlogs> SearchForTourLogs(string searchtext)
         {
             return context.tourlogs.Where(t => t.time.Contains(searchtext) || t.distance.Contains(searchtext) || t.rating.Contains(searchtext) || t.comment.Contains(searchtext)).ToList();

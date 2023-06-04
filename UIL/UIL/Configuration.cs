@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
 using UIL.ViewModels;
+using UIL.Logging;
 
 namespace UIL
 {
@@ -17,6 +18,7 @@ namespace UIL
         public Configuration()
         {
             var services = new ServiceCollection();
+            
 
             services.AddSingleton<NavigationService, NavigationService>(s =>
             {

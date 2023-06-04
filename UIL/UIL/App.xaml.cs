@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using log4net.Core;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using UIL.Logging;
 using UIL.ViewModels;
 
 
@@ -24,12 +26,15 @@ namespace UIL
         {
             var config = new Configuration();
             config.NavigationService.NavigateTo<MainViewModel>(NavigationMode.Modeless);
+            LoggerWrapper logger = ILoggerWrapperFactory.GetLogger();
+            logger.Info("App started");
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
         
         public IConfiguration configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
+        
 
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class TourHandler
+    public class TourHandler : ITourHandler
     {
         public string Tourname;
         public string Description;
@@ -16,7 +16,7 @@ namespace BL
         public string To;
         public string Type;
         public int Id;
-        public void EditTourForDB(int _Id, string _Tourname, string _Description, string _From, string _To, string _Type)
+        public string EditTourForDB(int _Id, string _Tourname, string _Description, string _From, string _To, string _Type)
         {
             Id = _Id;
             Tourname = _Tourname;
@@ -24,8 +24,26 @@ namespace BL
             From = _From;
             To = _To;
             Type = _Type;
+            DALConfiguration configuration = new DALConfiguration();
 
-            EditMapQuest();
+            ToursContext context = new ToursContext(configuration.configuration);
+            ToursSQLRepository repository = new ToursSQLRepository(context);
+            List<tours> tours = new List<tours>();
+            var tourrepo = repository.GetSpecificTourByID(Id);
+            if (tourrepo.ToList<tours>().Count() == 1)
+            {
+                EditMapQuest();
+                return "ok";
+            }
+            else if(tourrepo.ToList<tours>().Count() == 0)
+            {
+                return "noresult";
+            }
+            else
+            {
+                return "error";
+            }
+           
         }
         
         public List<tours> SearchForTours(string searchtext)
@@ -61,12 +79,14 @@ namespace BL
             }
             return 0;
         }
-        public void DeleteTourForDB(int id)
+        
+        public int DeleteTourForDB(int id)
         {
             DALConfiguration configuration = new DALConfiguration();
 
             ToursContext context = new ToursContext(configuration.configuration);
             ToursSQLRepository repository = new ToursSQLRepository(context);
+            
 
             List<tourlogs> logs = new List<tourlogs>();
             TourLogHandler logHandler = new TourLogHandler();
@@ -77,6 +97,7 @@ namespace BL
             }
 
             repository.Remove(id);
+            return id;
         }
         public async Task<tours> CreateTourForDB(string _Tourname, string _Description, string _From, string _To, string _Type)
         {
@@ -124,8 +145,16 @@ namespace BL
 
             ToursContext context = new ToursContext(configuration.configuration);
             ToursSQLRepository repository = new ToursSQLRepository(context);
-            repository.Add(tour);
-            return tour;
+            if (repository.SelectTour(Tourname) == null)
+            {
+                repository.Add(tour);
+                return tour;
+            }
+            else
+            {
+                tours emptytour = new tours();
+                return emptytour;
+            }
 
         }
         public async void EditMapQuest()
@@ -155,5 +184,14 @@ namespace BL
             repository.Update(tour);
         }
 
+    }
+    public interface ITourHandler
+    {
+        string EditTourForDB(int _Id, string _Tourname, string _Description, string _From, string _To, string _Type);
+        List<tours> SearchForTours(string searchtext);
+        int SearchForID(string tourname);
+        int DeleteTourForDB(int id);
+        Task<tours> CreateTourForDB(string _Tourname, string _Description, string _From, string _To, string _Type);
+        List<tours> GetAllTours();
     }
 }
